@@ -6,12 +6,15 @@ from persona import Persona
 from asistencia import RegistroAsistencia
 from datetime import datetime, timedelta
 
+# Constante para el ancho del separador
+SEPARATOR_WIDTH = 60
+
 
 def demo():
     """Ejecuta una demostración del sistema"""
-    print("="*60)
+    print("="*SEPARATOR_WIDTH)
     print("DEMOSTRACIÓN DEL SISTEMA DE REGISTRO DE ASISTENCIA")
-    print("="*60)
+    print("="*SEPARATOR_WIDTH)
     print()
     
     # Crear instancia del registro
@@ -35,8 +38,9 @@ def demo():
     
     # Registrar asistencias
     print("3. Registrando asistencias...")
+    # Nota: Se usan diferentes tiempos para demostrar el historial
     for i, persona in enumerate(personas):
-        # Simular diferentes tiempos
+        # Simular diferentes tiempos (solo para propósitos de demostración)
         fecha = datetime.now() - timedelta(seconds=i*5)
         registro.registrar_asistencia(persona, fecha)
     print()
@@ -67,9 +71,9 @@ def demo():
     registro.guardar_datos()
     print()
     
-    print("="*60)
+    print("="*SEPARATOR_WIDTH)
     print("DEMOSTRACIÓN COMPLETADA")
-    print("="*60)
+    print("="*SEPARATOR_WIDTH)
     print()
     print("Los datos se han guardado en 'demo_asistencia.json'")
     print("Puede cargarlos nuevamente ejecutando este script otra vez.")

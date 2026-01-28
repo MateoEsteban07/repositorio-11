@@ -71,6 +71,8 @@ repositorio-11/
 ├── main.py           # Programa principal con interfaz de usuario
 ├── persona.py        # Clase Persona
 ├── asistencia.py     # Clase RegistroAsistencia
+├── ejemplo.py        # Script de demostración del sistema
+├── .gitignore        # Archivos a ignorar en git
 ├── asistencia.json   # Archivo de datos (generado automáticamente)
 └── README.md         # Este archivo
 ```

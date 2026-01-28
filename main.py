@@ -6,19 +6,22 @@ from persona import Persona
 from asistencia import RegistroAsistencia
 from datetime import datetime
 
+# Constante para el ancho del menú
+MENU_WIDTH = 60
+
 
 def mostrar_menu():
     """Muestra el menú principal"""
-    print("\n" + "="*60)
+    print("\n" + "="*MENU_WIDTH)
     print("SISTEMA DE REGISTRO DE ASISTENCIA")
-    print("="*60)
+    print("="*MENU_WIDTH)
     print("1. Registrar asistencia")
     print("2. Ver todas las asistencias")
     print("3. Buscar asistencias por persona")
     print("4. Buscar asistencias por fecha")
     print("5. Ver estadísticas")
     print("6. Guardar y salir")
-    print("="*60)
+    print("="*MENU_WIDTH)
 
 
 def registrar_nueva_asistencia(registro):
@@ -36,8 +39,11 @@ def registrar_nueva_asistencia(registro):
         print("✗ Error: El nombre y la identificación son obligatorios")
         return
     
-    persona = Persona(nombre, identificacion)
-    registro.registrar_asistencia(persona)
+    try:
+        persona = Persona(nombre, identificacion)
+        registro.registrar_asistencia(persona)
+    except ValueError as e:
+        print(f"✗ Error: {e}")
 
 
 def buscar_por_persona(registro):

@@ -12,9 +12,17 @@ class Persona:
         Args:
             nombre (str): Nombre completo de la persona
             identificacion (str): Número de identificación único
+        
+        Raises:
+            ValueError: Si nombre o identificacion están vacíos
         """
-        self.nombre = nombre
-        self.identificacion = identificacion
+        if not nombre or not isinstance(nombre, str) or not nombre.strip():
+            raise ValueError("El nombre debe ser una cadena no vacía")
+        if not identificacion or not isinstance(identificacion, str) or not identificacion.strip():
+            raise ValueError("La identificación debe ser una cadena no vacía")
+        
+        self.nombre = nombre.strip()
+        self.identificacion = identificacion.strip()
     
     def __str__(self):
         return f"{self.nombre} (ID: {self.identificacion})"
